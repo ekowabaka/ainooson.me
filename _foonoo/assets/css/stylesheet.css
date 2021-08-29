@@ -10,11 +10,11 @@ body {
 
 a {
     text-decoration: none;
-    color: #808080;
+    color: #0782b3;
 }
 
 a:hover {
-    color: #404040;
+    color: #40c1f8;
 }
 
 #top-section {
@@ -25,7 +25,8 @@ a:hover {
 #top-section > #side {
     padding: 20px;
     text-align: justify;
-    font-size: larger
+    font-size: larger;
+    color: #404040;
 }
 
 #top-section p {
@@ -34,21 +35,33 @@ a:hover {
 }
 
 .publication {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .publication p {
     margin: 0px;
+    font-size: large;
+}
+
+.publication div.actions {
+    margin-top: 3px;
 }
 
 .publication > .actions > a {
-    display: block;
-    padding: 10px;
+    display: inline-block;
+    padding: 5px;
     background-repeat: no-repeat;
-    padding-left: 30px;
-    background-position-y: 8px;
+    padding-left: 33px;
+    padding-right: 10px;
+    background-position-y: 7px;
+    background-position-x: 7px;
 }
 
 a.download {
-    background-image: url(../images/download.svg);
+    display: block;
+    color: #000;
+}
+
+a.download:hover {
+    color: #000;
 }

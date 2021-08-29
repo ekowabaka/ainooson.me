@@ -1,0 +1,36 @@
+name: build-and-publish
+on:
+    push:
+        branches:
+            - master
+jobs:
+    build-and-publish:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            - name: Fetch plugins as submodules
+              run: git submodule update --init --recursive
+            - name: Install PHP 7.4
+              uses: shivammathur/setup-php@v2
+              with:
+                php-version: '7.4'
+                tools: composer
+                extensions: imagick
+            - name: Install foonoo
+              uses: ./.github/actions/install-foonoo-action
+            - name: Create directory for highlight plugin
+              run: mkdir -p /tmp/foonoo-plugins/contrib
+            - name: Clone highlight repository
+              run: git clone https://github.com/foonoo/plugin-responsive-images /tmp/foonoo-plugins/contrib/responsive_images
+            - name: Generate the site
+              run: /tmp/foonoo/bin/foonoo generate -o output_site -P /tmp/foonoo-plugins
+            - name: Deploy Blog to Server
+              uses: up9cloud/action-rsync@v1.2  
+              env:
+                HOST: ${{secrets.SSH_HOST}}   
+                KEY: ${{secrets.SSH_PRIVATE_KEY}}
+                SOURCE: output_site/*
+                TARGET: /var/www/ainooson.me
+                ARGS: -avz --delete 
+

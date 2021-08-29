@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+body {
+    margin: 0px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Nunito Sans';
+}
+
+#top-section {
+    display: flex;
+    margin-top: 30px;
+}
+
+#top-section > #side {
+    padding: 20px;
+    text-align: justify;
+}
+
+#top-section p {
+    padding-bottom: 25px;
+    margin: 0px;
+}

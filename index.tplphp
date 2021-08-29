@@ -1,20 +1,23 @@
 <h1>James Ainooson</h1>
 <section id="top-section">
-    <img src="images/me.png" fn-responsive fn-responsive-max-width="250" />
+    <img src="images/me.png" fn-responsive fn-responsive-max-width="300" />
     <section id="side">
-    <p>I am a PhD candidate working under <a href="https://my.vanderbilt.edu/mkunda">Dr. Maithilee Kunda</a> at the [[https://my.vanderbilt.edu/aivaslab|Laboratory for Artificial Intelligence and Visual Analogical Systems]] of the [[https://vu.edu|Vanderbilt University]]. My current research involves the application of Program Synthesis as a tool for modeling strategy differences in intelligent systems. Primarily, I study tasks in the domain of visuo-spatial reasoning with visual imagery as the core knowledge representation.</p>
+    <p>I am a PhD. candidate working under <a href="https://my.vanderbilt.edu/mkunda">Dr. Maithilee Kunda</a> at the [[https://my.vanderbilt.edu/aivaslab|Laboratory for Artificial Intelligence and Visual Analogical Systems]] of the [[https://vu.edu|Vanderbilt University]]. My current research involves applying Program Synthesis as a tool for modeling strategy differences in intelligent systems. Primarily, I study tasks in the domain of visuo-spatial reasoning with models that use visual imagery as a core knowledge representation.</p>
 
-    <p> Before starting my PhD, I obtained a BSc in Computer Engineering from the [[https://www.ug.edu.gh|University of Ghana]], after which I worked with the [[https://nthc.com.gh|National Trust Holding Company]], and briefly with [[https://hubtel.com|SMSGH]] (now Hubtel).</p>
+    <p> Before starting work on my PhD, I obtained a BSc in Computer Engineering from the [[https://www.ug.edu.gh|University of Ghana]], after which I worked with the [[https://nthc.com.gh|National Trust Holding Company]], and briefly with [[https://hubtel.com|SMSGH]] (now Hubtel).</p>
 
     <p> You can read on my obsession with vintage cameras [[https://hotocameras.com|here]], and about my other adventures [[https://ekowabaka.me|here]].</p>
     </section>
 </section>
-<div id="publications">
-    <h2> Publications </h2>
-    <section id="publications">
-    <?php foreach($publications as $publication): ?>
-        <p><?= $publication['citation'] ?></p>
-        <div> <a href="<?= $publication['url'] ?>">Paper</a> <a href="<?= $publication['poster'] ?>">Poster</a></div>
-    <?php endforeach; ?>
-    </section>    
-</div>
+<h2> Publications </h2>
+<section id="publications">
+<?php foreach($publications as $publication): ?>
+    <div class="publication">
+    <p><?= str_replace("Ainooson, James", "<b>Ainooson, James</b>", $publication['citation']) ?></p>
+        <div class="actions"> 
+            <?php if(isset($publication['url'])): ?><a href="<?= $publication['url'] ?>" class="download paper">Paper</a> <?php endif; ?>
+            <?php if(isset($publication['poster'])): ?><a href="<?= $publication['poster'] ?>" class="download poster">Poster</a><?php endif; ?>
+        </div>
+    </div>
+<?php endforeach; ?>
+</section>    

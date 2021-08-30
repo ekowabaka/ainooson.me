@@ -1,6 +1,8 @@
-<h1>James Ainooson</h1>
+<h1 class="boxed">James Ainooson</h1>
+
+<div class="barred">
 <section id="top-section">
-    <img src="images/me.png" fn-responsive fn-responsive-max-width="300" />
+    <img src="images/me.png" fn-responsive fn-responsive-max-width="260" />
     <section id="side">
     <p>I am a PhD. candidate working under <a href="https://my.vanderbilt.edu/mkunda">Dr. Maithilee Kunda</a> at the [[https://my.vanderbilt.edu/aivaslab|Laboratory for Artificial Intelligence and Visual Analogical Systems]] of the [[https://vanderbilt.edu|Vanderbilt University]]. My current research involves applying Program Synthesis as a tool for modeling strategy differences in intelligent systems. Primarily, I study tasks in the domain of visuo-spatial reasoning with models that use visual imagery as a core knowledge representation.</p>
 
@@ -9,8 +11,11 @@
     <p> You can read on my obsession with vintage cameras <b>[[https://hotocameras.com|here]]</b>, and about my other adventures <b>[[https://ekowabaka.me|here]]</b>.</p>
     </section>
 </section>
+</div>
+
+
+<section id="publications" class="boxed">
 <h2> Publications </h2>
-<section id="publications">
 <?php foreach($publications as $publication): ?>
     <?php if(isset($publication['url'])): ?><a href="<?= $publication['url'] ?>" class="download paper"><?php endif; ?>
         <div class="publication">

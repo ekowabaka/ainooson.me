@@ -2,7 +2,6 @@
 
 body {
     margin: 0px;
-    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     font-family: 'Nunito Sans';
@@ -17,9 +16,24 @@ a:hover {
     color: #40c1f8;
 }
 
+.barred {
+    background-color: #ececec;
+}
+
+.barred > *, .boxed {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin: 0px;
+    padding: 20px;
+}
+
 #top-section {
     display: flex;
-    margin-top: 30px;
+    padding: 20px;
 }
 
 #top-section > #side {
@@ -32,6 +46,10 @@ a:hover {
 #top-section p {
     padding-bottom: 25px;
     margin: 0px;
+}
+
+#top-section p:last-child {
+    padding-bottom: 0px;
 }
 
 .publication {

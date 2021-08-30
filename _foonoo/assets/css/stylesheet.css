@@ -31,12 +31,27 @@ h1 {
     padding: 20px;
 }
 
+h2 {
+    margin: 0px;
+}
 #top-section {
     display: flex;
     padding: 20px;
 }
 
-#top-section > #side {
+@media (max-width: 650px) {
+    #top-section {
+        display: initial;
+        padding: 20px;
+    }  
+    
+    #top-section #headshot {
+        text-align: center;
+    }
+}
+
+
+#top-section  #side {
     padding: 20px;
     text-align: justify;
     font-size: larger;
@@ -52,12 +67,15 @@ h1 {
     padding-bottom: 0px;
 }
 
+#publications {
+    padding: 20px;
+}
+
 .publication {
     margin-bottom: 30px;
 }
 
 .publication p {
-    margin: 0px;
     font-size: large;
 }
 
